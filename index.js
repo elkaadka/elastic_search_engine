@@ -1,6 +1,4 @@
-var protocol = (process.argv[2] === undefined || (process.argv[2] !== 'http' && process.argv[2] !== 'https')) ? 'http' : process.argv[2];
-var port = process.argv[3] === undefined ? 80 : parseInt(process.argv[3]);
-
+var config = require('./config');
 var logs = require('./logs');
 
 //loading express
@@ -15,9 +13,9 @@ try {
 }
 
 //loading http server
-logs.log("Loading "+ protocol +" server....");
+logs.log("Loading "+ config.PROTOCOL +"server....");
 try {
-    var server = require(protocol).createServer(app);
+    var server = require(config.PROTOCOL).createServer(app);
     logs.success('OK\n');
 } catch (exception) {
     logs.error('NOK\n');
@@ -49,8 +47,19 @@ try {
     process.exit(1);
 }
 
-logs.info('Listening on port '+ port +'...');
-server.listen(port).on('error', function(err) {
+//serving static files in the public folder (css, js, images)
+logs.log('Serving static files....');
+try {
+    var statics = require('./public');
+    statics.serve(app, express);
+    logs.success('OK\n');
+} catch (exception) {
+    logs.error('NOK\n');
+    process.exit(1);
+}
+
+logs.info('Listening on port '+ config.PORT +'...'+"\n");
+server.listen(config.PORT).on('error', function(err) {
     logs.error('NOK\n');
     logs.error(err + '\n');
 });

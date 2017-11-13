@@ -1,7 +1,7 @@
 {
-  "name": "basichttpserver",
+  "name": "elasticsearchengine",
   "version": "1.0.0",
-  "description": "A basic HTTP(S) server for quick tests",
+  "description": "A search engine for elastic search",
   "main": "index.js",
   "author": "Adil El Kanabi",
   "license": "ISC",
