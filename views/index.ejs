@@ -1,0 +1,202 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+        <style>
+            body {
+                width: 100%;
+                height: 100%;
+                background: url(http://www.bing.com/az/hprichbg/rb/PlanetariumBibliotheca_EN-US12150844356_1920x1080.jpg) no-repeat center center scroll;
+            }
+            .header {
+                position: relative;
+                display: table;
+                width: 100%;
+                height: 100%;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+            .main {
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+
+            .main h1 {
+                font-size: 50px;
+                text-transform: uppercase;
+                font-weight: 300;
+                font-family: 'Roboto', sans-serif;
+                color: #ffffff;
+            }
+
+            .main h1 span {
+                display: block;
+                width: 150px;
+                height: 1px;
+                background: white;
+                margin: 40px auto;
+            }
+
+            .search_promo {
+                max-width: 900px;
+                margin: 40px auto;
+            }
+
+            .search_promo input {
+                height: 55px;
+                border: 0px;
+                border-radius: 3px;
+                color: #8c8c8c;
+                font-size: 18px;
+                font-weight: 300;
+                padding: 0px 20px;
+            }
+            .search_promo input:focus, .btn_cat button:focus, .btn_promo_search button:focus, .input-group-btn {outline: none; box-shadow: none;}
+            .search_promo .btn_cat button span {
+                color: #322F44;
+                font-size: 16px;
+                display: block;
+                overflow: hidden;
+                padding: 10px 0px;
+            }
+            .search_promo .btn_cat button span .caret {
+                padding: 0px;
+                display: block;
+                float: none !important;
+                position: absolute;
+                top: 14px;
+                right: 15px;
+            }
+            .btn_cat {
+                width: 200px;
+            }
+
+            .btn_cat button {
+                display: block;
+                width: 100%;
+                height: 55px;
+                border-radius: 3px;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+                box-shadow: none;
+                background: #FFFFFF;
+                text-align: left;
+                color: #322F44;
+                font-size: 15px;
+                font-weight: 300;
+                padding: 0px 20px 0px 10px;
+                border-left: 1px solid #E5E5E5;
+            }
+
+            .btn_cat button i {
+                padding-right: 10px;
+                font-size: 16px;
+                color: #322F44;
+            }
+            .btn_cat button:hover {
+                background: #F2F2F2;
+                color: #5b5b5b;
+                border-left: 1px solid #F2F2F2;
+                border-bottom-right-radius: 3px;
+            }
+            .btn_cat.open button.dropdown-toggle i, .btn_cat.open button.dropdown-toggle .caret {
+                color: #ffffff;
+            }
+            .btn_cat button .caret {
+                color: #322F44;
+                float: right;
+                margin-top: 12px;
+            }
+
+            .btn_promo_search {}
+
+            .btn_promo_search button {
+                height: 55px;
+                padding: 0px 50px;
+                font-size: 18px;
+                margin-left: 30px !important;
+                border-radius: 3px !important;
+            }
+
+
+
+
+            /*Insert btn*/
+            .place_dd {
+                width: 200px;
+                margin-top: -1px;
+                background: #47A5F5;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                border: 0px;
+                height: 200px;
+                overflow: hidden;
+                overflow-y: scroll;
+            }
+            .place_dd li {
+            }
+            .place_dd li a {
+                padding: 10px 15px;
+                color: #ffffff;
+                font-size: 15px;
+                font-weight: 300;
+            }
+            .place_dd li a i {
+                margin-right: 15px;
+                color: #ffffff;
+            }
+            .place_dd li a:hover {
+                background: #ffffff;
+                color: #47A5F5;
+            }
+            .place_dd li a:hover i {
+                color: #47A5F5;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <header class="header" id="top">
+            <div class="main">
+                <h1>Veille Techno<span></span></h1>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="search_promo">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="...">
+                                <div class="input-group-btn btn_cat">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span><i class="fa fa-slack "></i>All Channels<span class="caret"></span></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right place_dd" role="menu">
+                                        <li>PHP</li>
+                                        <li>Javasxript</li>
+                                    </ul>
+                                </div>
+                                <div class="input-group-btn btn_promo_search">
+                                    <button type="button" class="btn btn-success">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger">Find Out More</a>
+            </div>
+        </header>
+        <footer>
+            <a href="http://www.bing.com/az/hprichbg/rb/PlanetariumBibliotheca_EN-US12150844356_1920x1080.jpg">
+                Planetarium at the Bibliotheca Alexandrina, Alexandria, Egypt (© Paul Panayiotou/SIME/eStock Photo)
+            </a>
+        </footer>
+    </body>
+
+</html>
