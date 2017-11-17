@@ -1,42 +1,202 @@
+<!DOCTYPE html>
+
+
+<!DOCTYPE html>
+<!--
+  Copyright 2016 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
 <html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/ese.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <header class="header" id="top">
-            <div class="main">
-                <h1>Veille Techno<span></span></h1>
+<head>
+    <meta charset="utf-8">
+    <title>Drawer (Persistent) - Material Components Catalog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="/css/ese.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        /* Ensure layout covers the entire screen. */
+        html {
+            height: 100%;
+        }
 
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="search_promo">
-                            <div class="input-group">
-                                <input type="text" class="form-control search_input" aria-label="...">
-                                <!--div class="input-group-btn btn_cat">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <span><i class="fa fa-slack "></i>All Channels<span class="caret"></span></span>
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-right place_dd" role="menu">
-                                        <li>PHP</li>
-                                        <li>Javasxript</li>
-                                    </ul>
-                                </div-->
+        /* Place drawer and content side by side. */
+        .demo-body {
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+        }
 
-                            </div>
+        /* Stack toolbar and main on top of each other. */
+        .demo-content {
+            display: inline-flex;
+            flex-direction: column;
+            flex-grow: 1;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .demo-main {
+            padding-left: 16px;
+        }
+    </style>
+</head>
+<body class="demo-body mdc-typography">
+<aside class="mdc-persistent-drawer">
+    <nav class="mdc-persistent-drawer__drawer">
+        <div class="mdc-persistent-drawer__toolbar-spacer"></div>
+        <div class="mdc-list-group">
+            <nav class="mdc-list">
+                <a class="mdc-list-item mdc-persistent-drawer--selected" href="#">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
+                </a>
+                <a class="mdc-list-item" href="#">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+                </a>
+                <a class="mdc-list-item" href="#">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">send</i>Sent Mail
+                </a>
+                <a class="mdc-list-item" href="#">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">drafts</i>Drafts
+                </a>
+            </nav>
+
+            <hr class="mdc-list-divider">
+
+            <nav class="mdc-list">
+                <a class="mdc-list-item" href="#">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">email</i>All Mail
+                </a>
+                <a class="mdc-list-item" href="#">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">delete</i>Trash
+                </a>
+                <a class="mdc-list-item" href="#">
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">report</i>Spam
+                </a>
+            </nav>
+        </div>
+    </nav>
+</aside>
+<div class="demo-content">
+    <header class="mdc-toolbar mdc-elevation--z4">
+        <div class="mdc-toolbar__row">
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+                <button class="demo-menu material-icons mdc-toolbar__menu-icon">menu</button>
+                <span class="mdc-toolbar__title catalog-title">Persistent Drawer</span>
+            </section>
+        </div>
+    </header>
+
+    <main class="demo-main">
+            <h1 class="mdc-typography--display1">Tell us about yourself!</h1>
+
+            <form action="#" id="greeting-form">
+                <div>
+                    <div class="mdc-form-field">
+                        <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                            <input id="firstname" type="text" class="mdc-text-field__input">
+                            <label for="firstname" class="mdc-text-field__label">
+                                First Name
+                            </label>
+                            <div class="mdc-text-field__bottom-line"></div>
+                        </div>
+                    </div>
+
+                    <div class="mdc-form-field">
+                        <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                            <input id="lastname" type="text" class="mdc-text-field__input">
+                            <label for="lastname" class="mdc-text-field__label">
+                                Last Name
+                            </label>
+                            <div class="mdc-text-field__bottom-line"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12">&nbsp;</div>
-                <div class="col-xs-12">
-                    <div class="btn_promo_search">
-                        <button type="button" class="btn btn-success">Search</button>
-                    </div>
+
+                <button type="submit"
+                        class="mdc-button
+                       mdc-button--raised
+                       mdc-ripple-surface"
+                        data-mdc-auto-init="MDCRipple">
+                    Print Greeting
+                </button>
+            </form>
+
+            <!-- The p element below is where we'll eventually output our greeting -->
+            <p class="mdc-typography--headline" id="greeting"></p>
+
+            <div>
+                <div class="mdc-card demo-card demo-card--with-avatar">
+                    <section class="mdc-card__primary">
+                        <div class="demo-card__avatar"></div>
+                        <h1 class="mdc-card__title">Title</h1>
+                        <h2 class="mdc-card__subtitle">Subhead</h2>
+                    </section>
+                    <section class="mdc-card__media demo-card__16-9-media"></section>
+                    <section class="mdc-card__supporting-text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+                    </section>
+                    <section class="mdc-card__actions">
+                        <button class="mdc-button mdc-button--compact mdc-card__action">Action 1</button>
+                        <button class="mdc-button mdc-button--compact mdc-card__action">Action 2</button>
+                    </section>
                 </div>
             </div>
-        </header>
-    </body>
+    </main>
 
+    <script src="/assets/material-components-web.js"></script>
+    <script>
+        var drawerEl = document.querySelector('.mdc-persistent-drawer');
+        var MDCPersistentDrawer = mdc.drawer.MDCPersistentDrawer;
+        var drawer = new MDCPersistentDrawer(drawerEl);
+        document.querySelector('.demo-menu').addEventListener('click', function() {
+            drawer.open = !drawer.open;
+        });
+        drawerEl.addEventListener('MDCPersistentDrawer:open', function() {
+            console.log('Received MDCPersistentDrawer:open');
+        });
+        drawerEl.addEventListener('MDCPersistentDrawer:close', function() {
+            console.log('Received MDCPersistentDrawer:close');
+        });
+    </script>
+</div>
+
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script>window.mdc.autoInit();</script>
+<script>
+    var drawerEl = document.querySelector('.mdc-persistent-drawer');
+    var MDCPersistentDrawer = mdc.drawer.MDCPersistentDrawer;
+    var drawer = new MDCPersistentDrawer(drawerEl);
+    document.querySelector('.demo-menu').addEventListener('click', function() {
+        drawer.open = !drawer.open;
+    });
+    drawerEl.addEventListener('MDCPersistentDrawer:open', function() {
+        console.log('Received MDCPersistentDrawer:open');
+    });
+    drawerEl.addEventListener('MDCPersistentDrawer:close', function() {
+        console.log('Received MDCPersistentDrawer:close');
+    });
+</script>
+</body>
 </html>
+
+
+
+

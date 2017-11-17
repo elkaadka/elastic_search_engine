@@ -12,10 +12,12 @@
     "express": "^4.15.4",
     "http": "0.0.0",
     "https": "^1.0.0",
+    "opn": "^5.1.0",
     "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
