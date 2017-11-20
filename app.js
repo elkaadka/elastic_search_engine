@@ -20,8 +20,7 @@ app.set('view engine', 'ejs');
 require('./routes')(app);
 
 //serving static files in the public folder (css, js, images)
-const statics = require('./public');
-statics.serve(app, express);
+app.use(express.static(__dirname + '/public'));
 
 //Listen on port specified in the config file
 server.listen(config.PORT).on('error', function(err) {
